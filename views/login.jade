@@ -1,0 +1,24 @@
+extends layout
+
+block styles
+	link(rel='stylesheet' type='text/css' href='/css/forms.css')
+	link(rel='stylesheet' type='text/css' href='/css/login.css')
+
+block content
+	div#wrapper
+		form.login-form(action='/loginUser', method='post')
+			div.header
+				h1.login Login
+				div.info
+					span Please sign in to view Cruz-Axalan information.
+						br
+						| The username and password are provided by Melvin or Jessica
+		
+			div.content
+				input.input.username(type="text" name="username" placeholder='Username')
+				div.user-icon
+				input.input.password(type="password" name="password" placeholder="Password")
+				div.pass-icon
+
+			div.footer
+				input.button(type="submit" name="submit" value="Login")

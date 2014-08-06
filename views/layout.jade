@@ -1,0 +1,43 @@
+html
+	head
+		meta(name='author' content='Herald Gutierrez')
+		meta(name='description' content='MIPS')
+		meta(name='keywords' content='HTML, CSS, JavaScript, jQuery, NodeJS, Jade, ExpressJS')
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+		title= title
+		
+		link(rel='stylesheet' type='text/css' href='/css/styles.css')
+		block styles
+
+		script(src='/js/jquery-2.0.3.min.js')
+		script(src='/js/mips.js')
+		script.
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-47827565-1', 'heraldgutierrez.com');
+			ga('send', 'pageview');
+
+		block scripts
+
+	body
+		header
+			div.container
+				center
+					span &equiv;	
+					h1 Cruz-Axalan Wedding
+
+			//div.logo-container
+			//	div.logo
+			//		img(src='/img/mips-logo.png')
+
+		div.main-container
+			block content
+
+		footer
+			div.icon-Links
+				span Created by 
+					a(href='http://heraldgutierrez.com') Herald Gutierrez
