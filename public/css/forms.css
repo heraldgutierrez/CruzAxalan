@@ -5,7 +5,7 @@ BODY STYLING
 *******************/
 #wrapper {
 	margin: 0 auto;
-	padding: 40px;
+	padding: 90px;
 }
 
 /*******************
@@ -48,11 +48,10 @@ HEADER
 CONTENT
 *******************/
 /* Input field */
-.login-form .content input {
+.login-form .form-content input {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight: 400;
 	font-size: 14px;
-	/*color: #9d9e9e;*/
 	text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
 	
 	background: #fff;
@@ -64,26 +63,18 @@ CONTENT
 	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
 }
 
-.login-form .content .input:hover {
+.login-form .form-content .input:hover {
 	background: #dfe9ec;
 	color: #414848;
 }
 
-.login-form .content .input:focus {
+.login-form .form-content .input:focus {
 	background: #dfe9ec;
 	color: #414848;
 	
 	box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
 	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
 	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
-}
-
-.login-form .content select.input {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	font-weight: 400;
-	font-size: 14px;
-	
-	height: 40px;
 }
 
 /*******************

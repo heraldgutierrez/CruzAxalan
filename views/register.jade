@@ -1,15 +1,11 @@
-extends layout
-
-block styles
-	link(rel='stylesheet' type='text/css' href='/css/forms.css')
-	link(rel='stylesheet' type='text/css' href='css/login.css')
+extends layoutForms
 
 block content
 	div#wrapper
 		form.login-form(action='/registerUser', method='post')
 			div.header
 				h1.signup Sign Up
-			div.content
+			div.form-content
 				input.input.username(type='text' name='username' placeholder='Username')
 				input.input.password(type='password' name='password' placeholder='Password')
 				input.input.password(type='password' name='verifyPassword' placeholder='Verify Password')

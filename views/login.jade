@@ -1,8 +1,4 @@
-extends layout
-
-block styles
-	link(rel='stylesheet' type='text/css' href='/css/forms.css')
-	link(rel='stylesheet' type='text/css' href='/css/login.css')
+extends layoutForms
 
 block content
 	div#wrapper
@@ -14,7 +10,7 @@ block content
 						br
 						| The username and password are provided by Melvin or Jessica
 		
-			div.content
+			div.form-content
 				input.input.username(type="text" name="username" placeholder='Username')
 				div.user-icon
 				input.input.password(type="password" name="password" placeholder="Password")

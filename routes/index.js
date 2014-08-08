@@ -17,11 +17,50 @@ exports.login = function(req, res) {
 };
 
 exports.register = function(req, res) {
-	res.render('register', {
-		title	: 'Cruz-Axalan Wedding Information | Signup'
+	if(req.query.q != undefined && (req.query.q).toLowerCase() == 'jeanne') {
+		res.render('register', {
+			title	: 'Cruz-Axalan Wedding Information | Signup'
+		});
+	} else {
+		res.redirect('/');
+	}
+};
+
+exports.GettingToOrlando = function(req, res) {
+	res.render('GettingToOrlando', {
+		title	: 'Cruz-Axalan Wedding Information | Getting to Orlando'
 	});
 };
 
+exports.WeddingDay = function(req, res) {
+	res.render('WeddingDay', {
+		title	: 'Cruz-Axalan Wedding Information | Wedding Day'
+	});
+};
+
+exports.SailingGuests = function(req, res) {
+	res.render('SailingGuests', {
+		title	: 'Cruz-Axalan Wedding Information | Sailing Guests'
+	});
+};
+
+exports.NonSailingGuests = function(req, res) {
+	res.render('NonSailingGuests', {
+		title	: 'Cruz-Axalan Wedding Information | Non-Sailing Guests'
+	});
+};
+
+exports.GuestsThatCouldntMakeIt = function(req, res) {
+	res.render('GuestsThatCouldntMakeIt', {
+		title	: "Cruz-Axalan Wedding Information | Guests that Couldn't Make It"
+	});
+};
+
+
+
+/*************************
+	DB Related
+*************************/
 exports.isLoggedIn = function(req, res, next) {
 	if(!req.session.currentUser)
 		res.redirect('/login');

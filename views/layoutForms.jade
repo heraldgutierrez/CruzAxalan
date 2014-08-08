@@ -1,14 +1,15 @@
 html
 	head
 		meta(name='author' content='Herald Gutierrez')
-		meta(name='description' content='MIPS')
+		meta(name='description' content='Cruz-Axalan')
 		meta(name='keywords' content='HTML, CSS, JavaScript, jQuery, NodeJS, Jade, ExpressJS')
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
 		title= title
 		
 		link(rel='stylesheet' type='text/css' href='/css/styles.css')
-		block styles
+		link(rel='stylesheet' type='text/css' href='/css/forms.css')
+		link(rel='stylesheet' type='text/css' href='/css/login.css')
 
 		script(src='/js/jquery-2.0.3.min.js')
 		script.
@@ -25,26 +26,8 @@ html
 	body
 		header
 			h1 &hearts; Melvin & Jessica - Wedding 2015 &hearts;
-			span Sunday - May 17, 2015 &nbsp;&nbsp; | &nbsp;&nbsp; Port Canaveral, Florida &nbsp;&nbsp; | &nbsp;&nbsp; Carnival Cruise – Sensation 
-			span #MJWed2015
-
 		div.main-container
-			div.navigation
-				ul
-					li 
-						a(href='/') Home
-					li 
-						a(href='/GettingToOrlando') Getting to Orlando
-					li 
-						a(href='/WeddingDay') Wedding Day
-					li 
-						a(href='/SailingGuests') Sailing Guests
-					li Non-Sailing Guests
-						//-a(href='/NonSailingGuests') Non-Sailing Guests
-					li Guests that Couldn't Make It
-						//a(href='/GuestsThatCouldntMakeIt') Guests that Couldn't Make It
-			div.content
-				block content
+			block content
 
 		footer
 			div.icon-Links

@@ -39,6 +39,28 @@ app.configure(function() {
 	app.use(express.session());
 	app.use(app.router);
 	app.use(express.static(path.join(__dirname, 'public')));
+
+	// Error
+	app.use(function(req, res, next){
+		res.status(404);
+
+		// respond with html page
+		if (req.accepts('html')) {
+			res.render('404', { 
+				url: req.url 
+			});
+			return;
+		}
+
+		// respond with json
+		if (req.accepts('json')) {
+			res.send({ error: 'Not found' });
+			return;
+		}
+
+		// default to plain-text. send()
+		res.type('txt').send('Not found');
+	});
 });
 
 // development only
@@ -60,6 +82,13 @@ app.get('/login', routes.login);					// login page
 app.get('/register', routes.register);				// signup page
 app.post('/loginUser', routes.loginUser);			// user login
 app.post('/registerUser', routes.registerUser);		// user signup
+
+
+app.get('/GettingToOrlando', isLoggedIn, routes.GettingToOrlando);	
+app.get('/WeddingDay', isLoggedIn, routes.WeddingDay);
+app.get('/SailingGuests', isLoggedIn, routes.SailingGuests); 
+app.get('/NonSailingGuests', isLoggedIn, routes.NonSailingGuests);
+app.get('/GuestsThatCouldntMakeIt', isLoggedIn, routes.GuestsThatCouldntMakeIt);
 
 
 server.listen(app.get('port'), function() {

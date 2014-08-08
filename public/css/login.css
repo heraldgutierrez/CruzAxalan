@@ -42,20 +42,20 @@ HEADER
 CONTENT
 *******************/
 
-.login-form .content {
+.login-form .form-content {
 	padding: 0 0 25px 0;
 	width: 190px;
 	margin: 0 auto;
 }
 
 /* Input field */
-.login-form .content .input {
+.login-form .form-content .input {
 	width: 188px;
 	padding: 15px 25px;
 }
 
 /* Second input field */
-.login-form .content .password {
+.login-form .form-content .password {
 	margin-top: 15px;
 }
 
