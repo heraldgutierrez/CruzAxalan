@@ -62,9 +62,9 @@ exports.GuestsThatCouldntMakeIt = function(req, res) {
 	DB Related
 *************************/
 exports.isLoggedIn = function(req, res, next) {
-	// if(!req.session.currentUser)
-	// 	res.redirect('/login');
-	// else
+	if(!req.session.currentUser)
+		res.redirect('/login');
+	else
 		next();
 };
 
