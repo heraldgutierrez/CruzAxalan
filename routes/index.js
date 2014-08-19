@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 var UserModel = mongoose.model('Users');
+var nodemailer = require('nodemailer');
+
 /*
  * GET home page.
  */
@@ -26,21 +28,21 @@ exports.register = function(req, res) {
 	}
 };
 
+exports.ContactUs = function(req, res) {
+	res.render('ContactUs', {
+		title	: 'Cruz-Axalan Wedding Information | Contact Us'
+	});
+};
+
 exports.GettingToOrlando = function(req, res) {
 	res.render('GettingToOrlando', {
 		title	: 'Cruz-Axalan Wedding Information | Getting to Orlando'
 	});
 };
 
-exports.WeddingDay = function(req, res) {
-	res.render('WeddingDay', {
-		title	: 'Cruz-Axalan Wedding Information | Wedding Day'
-	});
-};
-
-exports.SailingGuests = function(req, res) {
-	res.render('SailingGuests', {
-		title	: 'Cruz-Axalan Wedding Information | Sailing Guests'
+exports.GuestsThatCouldntMakeIt = function(req, res) {
+	res.render('GuestsThatCouldntMakeIt', {
+		title	: "Cruz-Axalan Wedding Information | Guests that Couldn't Make It"
 	});
 };
 
@@ -50,9 +52,15 @@ exports.NonSailingGuests = function(req, res) {
 	});
 };
 
-exports.GuestsThatCouldntMakeIt = function(req, res) {
-	res.render('GuestsThatCouldntMakeIt', {
-		title	: "Cruz-Axalan Wedding Information | Guests that Couldn't Make It"
+exports.SailingGuests = function(req, res) {
+	res.render('SailingGuests', {
+		title	: 'Cruz-Axalan Wedding Information | Sailing Guests'
+	});
+};
+
+exports.WeddingDay = function(req, res) {
+	res.render('WeddingDay', {
+		title	: 'Cruz-Axalan Wedding Information | Wedding Day'
 	});
 };
 
@@ -133,3 +141,46 @@ exports.registerUser = function(req, res) {
 		res.redirect('/register?warning=verifyPassword');
 	}
 }; // end: signup
+
+exports.Contact = function(req, res) {
+	var mailOpts, smtpTrans;
+	var name = req.body.name;
+	var email = req.body.email;
+	var message = req.body.message;
+	message = 'From: ' + name + '  &lt;' + email + '&gt;<br>' + message;
+
+	// create reusable transporter object using SMTP transport
+	var transporter = nodemailer.createTransport({
+	    service: 'Gmail',
+	    auth: {
+	        user: 'mail.heraldg@gmail.com',
+			pass: 'augypolfrrxvmpzd' 
+	    }
+	});
+
+	// setup e-mail data with unicode symbols
+	var mailOptions = {
+	    from: name + ' &lt;' + email + '&gt;',
+	    to: 'mjwedd2015@gmail.com',
+	    subject: 'Melvin-Jessica | Contact Us',
+	    text: message,
+	    html: message
+	};
+
+	// send mail with defined transport object
+	transporter.sendMail(mailOptions, function(error, info){
+	    if(error){
+	        console.log(error);
+	        res.render('ContactUs', {
+				title	: 'Cruz-Axalan Wedding Information | Contact Us',
+				success : false
+			});
+	    }else{
+	        console.log('Message sent: ' + info.response);
+    		res.render('ContactUs', {
+				title	: 'Cruz-Axalan Wedding Information | Contact Us',
+				success : true
+			});
+	    }
+	});
+};

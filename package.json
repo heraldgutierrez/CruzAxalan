@@ -10,7 +10,8 @@
         "jade"      : "*",
         "mongodb"   : "*",
         "mongoose"  : "*",
-        "bcrypt"    : "*"
+        "bcrypt"    : "*",
+        "nodemailer": "*"
     },
     "author" : "Herald Gutierrez"
 }

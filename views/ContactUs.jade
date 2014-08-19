@@ -1,0 +1,30 @@
+extends layout
+
+block content
+	h2 Contact Us
+
+	if success == false
+		div.error
+			h3 Error sending an email.
+	
+	if success == true
+		div.success
+			h3 Email has been sent to Jessica and Melvin
+
+	form.contact(action='/Contact', method='post')
+		table.contactTbl 
+			tr
+				td(align='right', width='100px;') Name : &nbsp;
+				td 
+					input.input(type='text' name='name' placeholder='Your name (Required)')
+			tr
+				td(align='right') E-mail : &nbsp;
+				td 
+					input.input(type='text' name='email' placeholder='Your e-mail (Required)')
+			tr
+				td(align='right', valign='top') Message : &nbsp;
+				td 
+					textarea.input(type='text' name='message' placeholder='Your message... (Required)' rows='5')
+			tr
+				td(colspan=2)
+					input.button(type="submit" name="submit" value="Send")
