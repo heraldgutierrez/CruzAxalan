@@ -1,0 +1,77 @@
+.polaroid-background {
+	width: 225px;
+	height: 225px;
+	color: black;
+	position: absolute;
+	z-index: 1;
+}
+
+.polaroid {
+	border: 1px solid black;
+	width: 160px;
+	height: 180px;
+	background-color: #eeeeee;
+	overflow: visible;
+	margin: 0 auto;
+}
+
+.polaroid .photo {
+	border: 1px solid black;
+	width: 93%;
+	height: 70%;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.polaroid .photo img {
+	width: 100%;
+	height: 100%;
+}
+
+.polaroid .description {
+	height: 38px;
+	width: 94%;
+	margin-top: 4px;
+	margin-left: 5px;
+	text-align: center;
+}
+
+.polaroid-1 {
+	left: -50px;
+	top: -15px;
+}
+
+.polaroid-2 {
+	left: 80px;
+	top: -15px;
+}
+
+.polaroid-3 {
+	left: 200px;
+	top: -15px;
+}
+
+.polaroid-4 {
+	left: 270px;
+	top: -15px;
+}
+
+.polaroid-5 {
+	left: 400px;
+	top: -15px;
+}
+
+.polaroid-6 {
+	left: 500px;
+	top: -15px;
+}
+
+.polaroid-7 {
+	left: 600px;
+	top: -15px;
+}
+
+.polaroid-8 {
+	left: 650px;
+	top: -15px;
+}

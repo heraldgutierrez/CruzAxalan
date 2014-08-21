@@ -1,13 +1,17 @@
 html
 	head
 		meta(name='author' content='Herald Gutierrez')
-		meta(name='description' content='MIPS')
+		meta(name='description' content="Melvin Cruz and Jessica Axalan's Wedding Information")
 		meta(name='keywords' content='HTML, CSS, JavaScript, jQuery, NodeJS, Jade, ExpressJS')
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
 		title= title
 		
 		link(rel='stylesheet' type='text/css' href='/css/styles.css')
+		link(rel='stylesheet' type='text/css' href='/css/header.css')
+		link(rel='stylesheet' type='text/css' href='/css/navigation.css')
+		link(rel='stylesheet' type='text/css' href='/css/polaroid.css')
+		link(rel='stylesheet' type='text/css' href='/css/rotate.css')
 		block styles
 
 		script(src='/js/jquery-2.0.3.min.js')
@@ -24,27 +28,81 @@ html
 
 	body
 		header
-			h1 Melvin & Jessica - Wedding 2015
-			span Sunday - May 17, 2015 &nbsp;&nbsp; | &nbsp;&nbsp; Port Canaveral, Florida &nbsp;&nbsp; | &nbsp;&nbsp; Carnival Cruise – Sensation 
-			span #MJWed2015 &nbsp;&nbsp;&nbsp; #051715
+			div.polaroid-container
+				div.polaroid-background.polaroid-2
+					div.polaroid.rotate-15-left
+						div.photo
+							img(src="/img/grad.jpg")
+						div.description
+							span Graduation
+				div.polaroid-background.polaroid-7
+					div.polaroid
+						div.photo
+							img(src="/img/grad.jpg")
+						div.description
+							span 
+				div.polaroid-background.polaroid-1
+					div.polaroid.rotate-15-right
+						div.photo
+							img(src="/img/dinner.jpg")
+						div.description
+							span &hearts;
+				div.polaroid-background.polaroid-4
+					div.polaroid.rotate-30-right
+						div.photo
+							img(src="/img/cheerleaders.jpg")
+						div.description
+							span 
+				div.polaroid-background.polaroid-5
+					div.polaroid.rotate-15-left
+						div.photo
+							img(src="/img/gutierrez wedding 2.jpg")
+						div.description
+							span 
+				div.polaroid-background.polaroid-6
+					div.polaroid.rotate-30-right
+						div.photo
+							img(src="/img/on the run.jpg")
+						div.description
+							span On the Run
+				div.polaroid-background.polaroid-3
+					div.polaroid
+						div.photo
+							img(src="/img/heats.jpg")
+						div.description
+							span Miami Heats
+				div.polaroid-background.polaroid-8
+					div.polaroid.rotate-30-left
+						div.photo
+							img(src="/img/gutierrez wedding.jpg")
+						div.description
+							span &hearts;
+			div.header
+				h1 Jessica & Melvin
+				if includeHeader == true
+					span Sunday - May 17, 2015 &nbsp;&nbsp; | &nbsp;&nbsp; Port Canaveral, Florida &nbsp;&nbsp; | &nbsp;&nbsp; Carnival Cruise – Sensation 
+					span #MJWed2015 &nbsp;&nbsp;&nbsp; #051715
 
 		div.main-container
-			div.navigation
-				ul
-					li 
-						a(href='/') Home
-					li 
-						a(href='/GettingToOrlando') Getting to Orlando
-					li 
-						a(href='/WeddingDay') Wedding Day
-					li 
-						a(href='/SailingGuests') Sailing Guests
-					li 
-						a(href='/NonSailingGuests') Non-Sailing Guests
-					li 
-						a(href='/ContactUs') Contact Us
-					
-			div.content
+			if includeHeader
+				div.navigation
+					ul
+						li &nbsp;
+						li 
+							a(href='/') Home
+						li 
+							a(href='/GettingToOrlando') Getting to Orlando
+						li 
+							a(href='/WeddingDay') Wedding Day
+						li 
+							a(href='/SailingGuests') Sailing Guests
+						li 
+							a(href='/NonSailingGuests') Non-Sailing Guests
+						li 
+							a(href='/ContactUs') Contact Us
+				div.content
+					block content
+			if !includeHeader
 				block content
 
 		footer

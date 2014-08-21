@@ -8,20 +8,23 @@ var nodemailer = require('nodemailer');
 
 exports.index = function(req, res) {
 	res.render('index', {
-		title	: 'Cruz-Axalan Wedding Information'
+		title	: 'Jessica & Melvin Wedding Information',
+		includeHeader : true
 	});
 };
 
 exports.login = function(req, res) {
 	res.render('login', {
-		title	: 'Cruz-Axalan Wedding Information | Login'
+		title	: 'Jessica & Melvin Wedding Information | Login',
+		includeHeader : false
 	});
 };
 
 exports.register = function(req, res) {
 	if(req.query.q != undefined && (req.query.q).toLowerCase() == 'jeanne') {
 		res.render('register', {
-			title	: 'Cruz-Axalan Wedding Information | Signup'
+			title	: 'Jessica & Melvin Wedding Information | Signup',
+			includeHeader : false
 		});
 	} else {
 		res.redirect('/');
@@ -30,37 +33,43 @@ exports.register = function(req, res) {
 
 exports.ContactUs = function(req, res) {
 	res.render('ContactUs', {
-		title	: 'Cruz-Axalan Wedding Information | Contact Us'
+		title	: 'Jessica & Melvin Wedding Information | Contact Us',
+		includeHeader : true
 	});
 };
 
 exports.GettingToOrlando = function(req, res) {
 	res.render('GettingToOrlando', {
-		title	: 'Cruz-Axalan Wedding Information | Getting to Orlando'
+		title	: 'Jessica & Melvin Wedding Information | Getting to Orlando',
+		includeHeader : true
 	});
 };
 
 exports.GuestsThatCouldntMakeIt = function(req, res) {
 	res.render('GuestsThatCouldntMakeIt', {
-		title	: "Cruz-Axalan Wedding Information | Guests that Couldn't Make It"
+		title	: "Jessica & Melvin Wedding Information | Guests that Couldn't Make It",
+		includeHeader : true
 	});
 };
 
 exports.NonSailingGuests = function(req, res) {
 	res.render('NonSailingGuests', {
-		title	: 'Cruz-Axalan Wedding Information | Non-Sailing Guests'
+		title	: 'Jessica & Melvin Wedding Information | Non-Sailing Guests',
+		includeHeader : true
 	});
 };
 
 exports.SailingGuests = function(req, res) {
 	res.render('SailingGuests', {
-		title	: 'Cruz-Axalan Wedding Information | Sailing Guests'
+		title	: 'Jessica & Melvin Wedding Information | Sailing Guests',
+		includeHeader : true
 	});
 };
 
 exports.WeddingDay = function(req, res) {
 	res.render('WeddingDay', {
-		title	: 'Cruz-Axalan Wedding Information | Wedding Day'
+		title	: 'Jessica & Melvin Wedding Information | Wedding Day',
+		includeHeader : true
 	});
 };
 
@@ -70,9 +79,9 @@ exports.WeddingDay = function(req, res) {
 	DB Related
 *************************/
 exports.isLoggedIn = function(req, res, next) {
-	if(!req.session.currentUser)
-		res.redirect('/login');
-	else
+	// if(!req.session.currentUser)
+	// 	res.redirect('/login');
+	// else
 		next();
 };
 
@@ -173,12 +182,14 @@ exports.Contact = function(req, res) {
 	        console.log(error);
 	        res.render('ContactUs', {
 				title	: 'Cruz-Axalan Wedding Information | Contact Us',
+				includeHeader : true,
 				success : false
 			});
 	    }else{
 	        console.log('Message sent: ' + info.response);
     		res.render('ContactUs', {
 				title	: 'Cruz-Axalan Wedding Information | Contact Us',
+				includeHeader : true,
 				success : true
 			});
 	    }
