@@ -1,0 +1,140 @@
+@font-face {
+	font-family: 'great-vibes';
+	src: url('/fonts/GreatVibes.otf'), url('/font/GreatVibes.ttf');
+}
+
+body, html {
+	overflow: hidden;
+}
+
+body {
+	font: 100% / 1.5 Arial;
+	color: white;
+}
+
+.background-image {	
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: -1;
+
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	background: url('/img/trees.jpg'); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+	-webkit-filter: blur(5px);
+	   -moz-filter: blur(5px);
+		-ms-filter: blur(5px);
+		 -o-filter: blur(5px);
+			filter: blur(5px);
+
+}
+
+* {
+	margin:0;
+	padding:0;
+}
+
+.parallax {
+	font-size: 175%;
+}
+
+h1 {
+	font-size: 250%;
+	font-family: 'great-vibes';
+}
+
+.glass {
+	position: absolute;
+	background-color: black;
+	opacity: 0.6;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+.content {
+	padding: 0 5%;
+	height: 95%;
+	overflow: scroll;
+}
+
+.right {
+	float: right;
+	text-align: right;
+	display: block;
+}
+
+/* style the groups
+--------------------------------------------- */
+#Introduction {
+	z-index: 5; /* slide over group 2 */
+}
+
+#Introduction .parallax_layer_base {
+	background: url('/img/introduction.jpg'); 
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#GettingToOrlando {
+	z-index: 3; /* slide under groups 1 and 3 */
+}
+
+#GettingToOrlando .parallax_layer_back {
+	background: url('/img/sitting-on-wall.jpg'); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#WeddingDay {
+	z-index: 4; /* slide over group 2 and 4 */
+}
+#WeddingDay .parallax_layer_base {
+	background: url('/img/putting-on-ring.jpg'); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#Sailing {
+	z-index: 2; /* slide under group 3 and 5 */
+}
+
+#Sailing .parallax_layer_back {
+	background: url('/img/together2.jpg'); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#NonSailing {
+	z-index: 3; /* slide over group 4 and 6 */
+}
+
+#NonSailing .parallax_layer_base {
+	background: url('/img/wedding-ring.jpg'); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#ContactUs {
+	z-index: 2; /* slide under group 5 and 7 */
+}
+
+#ContactUs .parallax_layer_base {
+	background: url('/img/holding-hands.jpg'); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+@media (max-width: 991px) {
+	.container {
+		width: 100%;
+		min-width: 800px;
+		margin: 0;
+		padding: 0;
+	}
+}

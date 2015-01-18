@@ -78,6 +78,7 @@ app.configure('development', function() {
 *********************************************************
 *********************************************************/
 
+
 app.get('/', isLoggedIn, routes.index);
 app.get('/login', routes.login);					// login page
 app.get('/register', routes.register);				// signup page
@@ -90,6 +91,10 @@ app.get('/GuestsThatCouldntMakeIt', isLoggedIn, routes.GuestsThatCouldntMakeIt);
 app.get('/NonSailingGuests', isLoggedIn, routes.NonSailingGuests);
 app.get('/SailingGuests', isLoggedIn, routes.SailingGuests); 
 app.get('/WeddingDay', isLoggedIn, routes.WeddingDay);
+
+app.get('/update', function(req, res) {
+	res.render('test');
+});
 
 app.post('/Contact', routes.Contact);
 
