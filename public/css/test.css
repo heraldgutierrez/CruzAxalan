@@ -133,7 +133,7 @@ h1 {
 @media (max-width: 991px) {
 	.container {
 		width: 100%;
-		min-width: 800px;
+		/*min-width: 800px;*/
 		margin: 0;
 		padding: 0;
 	}
