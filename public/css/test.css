@@ -59,7 +59,7 @@ h1 {
 
 .content {
 	padding: 0 5%;
-	height: 95%;
+	max-height: 95%;
 	overflow: scroll;
 }
 
