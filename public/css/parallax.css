@@ -1,6 +1,7 @@
 .parallax {
-	height: 500px; /* fallback for older browsers */
-	height: 100vh;
+	/*height: 500px; /* fallback for older browsers */
+	/*height: 100vh;*/
+	height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
 
@@ -13,7 +14,8 @@
 
 .parallax_group {
 	position: relative;
-	height: 500px; /* fallback for older browsers */
+	/*height: 500px; /* fallback for older browsers */
+	/*height: 100vh;*/
 	height: 100vh;
 
 	-webkit-transform-style: preserve-3d;
@@ -69,4 +71,74 @@
 		-ms-transform: translateZ(-600px) scale(3);
 		 -o-transform: translateZ(-600px) scale(3);
 			transform: translateZ(-600px) scale(3);
+}
+
+
+@media (max-width: 991px) {
+	.parallax {
+		/*height: 500px; /* fallback for older browsers */
+		/*height: 100vh;*/
+		height: 110vh;
+		overflow-x: hidden;
+		overflow-y: auto;
+
+		-webkit-perspective: 0px;
+		   -moz-perspective: 0px;
+			-ms-perspective: 0px;
+			 -o-perspective: 0px;
+				perspective: 0px;
+	}
+
+	.parallax_group {
+		position: relative;
+		/*height: 500px; /* fallback for older browsers */
+		/*height: 100vh;*/
+		/*height: 100%;*/
+
+		-webkit-transform-style: none;
+		   -moz-transform-style: none;
+			-ms-transform-style: none;
+			 -o-transform-style: none;
+				transform-style: none;
+	}
+
+	.parallax_layer_fore {
+		z-index: 5;
+
+		-webkit-transform: translateZ(0) scale(1);
+		   -moz-transform: translateZ(0) scale(1);
+			-ms-transform: translateZ(0) scale(1);
+			 -o-transform: translateZ(0) scale(1);
+				transform: translateZ(0) scale(1);
+	}
+
+	.parallax_layer_base {
+		z-index: 4;
+
+		-webkit-transform: translateZ(0);
+		   -moz-transform: translateZ(0);
+			-ms-transform: translateZ(0);
+			 -o-transform: translateZ(0);
+				transform: translateZ(0);
+	}
+
+	.parallax_layer_back {
+		z-index: 3;
+
+		-webkit-transform: translateZ(0) scale(1);
+		   -moz-transform: translateZ(0) scale(1);
+			-ms-transform: translateZ(0) scale(1);
+			 -o-transform: translateZ(0) scale(1);
+				transform: translateZ(0) scale(1);
+	}
+
+	.parallax_layer_deep {
+		z-index: 2;
+
+		-webkit-transform: translateZ(0) scale(1);
+		   -moz-transform: translateZ(0) scale(1);
+			-ms-transform: translateZ(0) scale(1);
+			 -o-transform: translateZ(0) scale(1);
+				transform: translateZ(0) scale(1);
+	}
 }
