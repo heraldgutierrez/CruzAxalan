@@ -44,8 +44,31 @@ body {
 }
 
 h1 {
-	font-size: 250%;
+	font-size: 350%;
 	font-family: 'great-vibes';
+}
+
+input, textarea {
+	width: 300px;
+	margin-bottom: 10px;
+}
+
+a {
+	color: white;
+	text-decoration: underline;
+}
+
+li {
+	margin-bottom: 3px;
+}
+
+table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+table tr td {
+	padding: 5px 0;
 }
 
 .glass {

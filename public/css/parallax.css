@@ -74,7 +74,7 @@
 }
 
 
-@media (max-width: 991px) {
+@media (max-width: 600px) {
 	.parallax {
 		/*height: 500px; /* fallback for older browsers */
 		/*height: 100vh;*/
