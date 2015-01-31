@@ -1,0 +1,197 @@
+@font-face {
+	font-family: 'great-vibes';
+	src: url('/fonts/GreatVibes.otf'), url('/font/GreatVibes.ttf');
+}
+
+body, html {
+	overflow: hidden;
+}
+
+body {
+	font: 7pt / 1.5 Arial;
+	color: white;
+}
+
+.background-image {	
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: -1;
+
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	background: url('/img/trees.jpg'); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+	-webkit-filter: blur(5px);
+	   -moz-filter: blur(5px);
+		-ms-filter: blur(5px);
+		 -o-filter: blur(5px);
+			filter: blur(5px);
+
+}
+
+* {
+	margin:0;
+	padding:0;
+}
+
+.parallax {
+	font-size: 175%;
+}
+
+h1 {
+	font-size: 350%;
+	font-family: 'great-vibes';
+}
+
+h2 {
+	font-size: 175%;
+	font-family: 'great-vibes';
+}
+
+input, textarea {
+	width: 300px;
+	margin-bottom: 10px;
+}
+
+a {
+	color: white;
+	text-decoration: underline;
+}
+
+li {
+	margin-bottom: 3px;
+}
+
+table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+table tr td {
+	padding: 5px 0;
+}
+
+.glass {
+	position: absolute;
+	background-color: black;
+	opacity: 0.6;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+.content {
+	padding: 0 5%;
+	min-height: 100%;
+	max-height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.right {
+	float: right;
+	text-align: right;
+	display: block;
+}
+
+.content {
+	z-index: 99;
+}
+
+/* style the groups
+--------------------------------------------- */
+#Introduction {
+	z-index: 5; /* slide over group 2 */
+}
+
+#Introduction .parallax_layer_base {
+	background: url('/img/introduction.jpg'); 
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#PreWedding {
+	z-index: 3; /* slide under groups 1 and 3 */
+}
+
+#PreWedding .parallax_layer_back {
+	background: url('/img/flower-ring.jpg'); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#GettingToOrlando {
+	z-index: 4; /* slide under groups 1 and 3 */
+}
+
+#GettingToOrlando .parallax_layer_base {
+	background: url('/img/sitting-on-wall.jpg'); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#WeddingDay {
+	z-index: 2; /* slide over group 2 and 4 */
+}
+#WeddingDay .parallax_layer_back {
+	background: url('/img/putting-on-ring.jpg'); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#Sailing {
+	z-index: 3; /* slide under group 3 and 5 */
+}
+
+#Sailing .parallax_layer_base {
+	background: url('/img/together.jpg'); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#NonSailing {
+	z-index: 2; /* slide over group 4 and 6 */
+}
+
+#NonSailing .parallax_layer_back {
+	background: url('/img/wedding-ring.jpg'); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#ContactUs {
+	z-index: 3; /* slide under group 5 and 7 */
+}
+
+#ContactUs .parallax_layer_base {
+	background: url('/img/holding-hands.jpg'); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+@media (max-width: 991px) {
+	body {
+		font: 90% / 1.25 Arial;
+	}
+
+	.container {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.content {
+		margin-right: 10px;
+	}
+
+	p, .right {
+		float: left;
+		text-align: justify;
+		display: block;
+	}
+}
