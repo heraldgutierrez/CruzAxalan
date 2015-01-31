@@ -85,17 +85,6 @@ app.get('/register', routes.register);				// signup page
 app.post('/loginUser', routes.loginUser);			// user login
 app.post('/registerUser', routes.registerUser);		// user signup
 
-app.get('/ContactUs', isLoggedIn, routes.ContactUs);
-app.get('/GettingToOrlando', isLoggedIn, routes.GettingToOrlando);	
-app.get('/GuestsThatCouldntMakeIt', isLoggedIn, routes.GuestsThatCouldntMakeIt);
-app.get('/NonSailingGuests', isLoggedIn, routes.NonSailingGuests);
-app.get('/SailingGuests', isLoggedIn, routes.SailingGuests); 
-app.get('/WeddingDay', isLoggedIn, routes.WeddingDay);
-
-app.get('/update', function(req, res) {
-	res.render('test');
-});
-
 app.post('/Contact', routes.Contact);
 
 server.listen(app.get('port'), function() {
